@@ -1,3 +1,6 @@
+# Custmoized gitignore file for C/C++ projects
+.vscode
+
 # Prerequisites
 *.d
 

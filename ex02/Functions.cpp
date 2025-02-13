@@ -6,7 +6,7 @@
 /*   By: josfelip <josfelip@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 17:03:44 by josfelip          #+#    #+#             */
-/*   Updated: 2025/02/11 17:04:01 by josfelip         ###   ########.fr       */
+/*   Updated: 2025/02/13 11:09:02 by josfelip         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@
 
 Base* generate(void)
 {
-    // Seed random number generator with current time
     std::srand(static_cast<unsigned>(std::time(nullptr)));
     
-    // Generate random number between 0 and 2
     int random = std::rand() % 3;
     
     switch (random) {
@@ -33,7 +31,6 @@ Base* generate(void)
 
 void identify(Base* p)
 {
-    // Use dynamic_cast with pointers - returns nullptr if cast fails
     if (dynamic_cast<A*>(p))
         std::cout << "A" << std::endl;
     else if (dynamic_cast<B*>(p))
@@ -44,7 +41,6 @@ void identify(Base* p)
 
 void identify(Base& p)
 {
-    // Use dynamic_cast with references - throws exception if cast fails
     try {
         (void)dynamic_cast<A&>(p);
         std::cout << "A" << std::endl;
